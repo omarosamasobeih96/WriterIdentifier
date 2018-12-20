@@ -182,7 +182,8 @@ public:
 			pair<int, int> rows = GetHandWritten(s, cur);
 			images.push_back(cur.GetSubMatrix(rows.first, rows.second, left_margin, cur.width - 1));
 		}
-		Image::WriteImage(writeFileName, CompressMatrices(images));
+		Matrix<bool> CompressedMatrix = CompressMatrices(images);
+		Image::WriteImage(writeFileName, CompressedMatrix);
 	}
 
 	static void Preprocess(string out, vector<Matrix<bool>> &winds) {
