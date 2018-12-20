@@ -49,15 +49,6 @@ public:
 	T& operator() (int row, int col) const {
 		return matrix[row][col];
 	}
-	Matrix operator *(const Matrix &rhs) const {
-		if (rhs.height != width) throw new exception("Matrix size mismatch");
-		Matrix ret(height, rhs.width);
-		for (int i = 0; i < height; ++i)
-			for (int j = 0; j < rhs.width; ++j)
-				for (int k = 0; k < width; ++k)
-					ret(i, j) += matrix[i][k] * rhs(k, j);
-		return ret;
-	}
 	Matrix GetSubMatrix(int strtRow, int endRow, int strtCol, int endCol) const {
 		Matrix<T> ret(endRow - strtRow + 1, endCol - strtCol + 1);
 		for (int i = strtRow, j = 0; i <= endRow; ++i, ++j)
