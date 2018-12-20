@@ -1,0 +1,4 @@
+correct: 152   predicted: 152
+
+correctly classified 1 / 1
+Accuracy = 100%
